@@ -1,7 +1,9 @@
 import BasketItem from "./BasketItem";
 
+// компонент более не используется!!!
+
 const BasketList = (props) => {
-  const { order, setOrder } = props;
+  const { order, removeFromOrder } = props;
 
   if (!order.length) {
     return (
@@ -16,7 +18,7 @@ const BasketList = (props) => {
     <ul className="basket list-group col-md-4">
       <li className="list-group-item active">Cart</li>
       {order.map((item, index) => (
-        <BasketItem key={index} setOrder={setOrder} {...item} />
+        <BasketItem key={index} removeFromOrder={removeFromOrder} {...item} />
       ))}
       <li className="list-group-item active">
         Total cost:{" "}

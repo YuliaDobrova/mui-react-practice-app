@@ -21,7 +21,7 @@ const GoodsItem = (props) => {
       // sx={{ border: "1px solid blue" }}
     >
       {/* <div className="card"> */}
-      <Card>
+      <Card sx={{ height: "100%" }}>
         <CardMedia
           component="img"
           image={poster}
@@ -39,6 +39,9 @@ const GoodsItem = (props) => {
         </CardContent>
         <CardActions>
           <Button
+            // variant="contained"
+            variant="outlined"
+            // variant="text"
             onClick={() =>
               setOrder({
                 id: props.id,

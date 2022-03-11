@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-import BasketList from "./BasketList";
+import { Basket } from "./Basket";
+// import BasketList from "./BasketList";   более не используется
 import GoodsList from "./GoodsList";
 import Search from "./Search";
 
@@ -12,6 +13,7 @@ const App = () => {
   const [order, setOrder] = useState([]);
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState(goods);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const handleChange = (e) => {
     if (!e.target.value) {
@@ -67,9 +69,11 @@ const App = () => {
 
   return (
     <>
-      <Header />
-      {/* <div className="App"> */}
-      {/* <div className="container"> */}
+      <Header
+        handleCart={() => {
+          setIsCartOpen(true);
+        }}
+      />
       <Container
         sx={{
           mt: "1rem",
@@ -77,10 +81,16 @@ const App = () => {
       >
         <Search value={search} onChange={handleChange} />
         <GoodsList goods={products} setOrder={addToOrder} />
-        <BasketList order={order} setOrder={removeFromOrder} />
+        {/* <BasketList order={order} removeFromOrder={removeFromOrder} /> */}
       </Container>
-      {/* </div> */}
-      {/* </div> */}
+      <Basket
+        order={order}
+        isCartOpen={isCartOpen}
+        removeFromOrder={removeFromOrder}
+        closeCart={() => {
+          setIsCartOpen(false);
+        }}
+      />
     </>
   );
 };
