@@ -20,7 +20,7 @@ export const Basket = (props) => {
   } = props;
   return (
     <Drawer anchor="right" open={isCartOpen} onClose={closeCart}>
-      <List sx={{ width: "400px" }}>
+      <List sx={{ width: "300px" }}>
         <ListItem>
           <ListItemIcon>
             <ShoppingBasket />

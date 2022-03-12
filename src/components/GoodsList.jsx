@@ -7,13 +7,8 @@ const GoodsList = (props) => {
   const { goods, setOrder } = props;
 
   return (
-    // <div className='goods-list col-md-8'>
-    // <div className='row'>
     <Grid
       container
-      //   direction="row"
-      //   justifyContent="center"
-      //   alignItems="center"
       spacing={2}
       sx={{ mb: 5 }}
     >
@@ -21,8 +16,6 @@ const GoodsList = (props) => {
         <GoodsItem key={item.id} setOrder={setOrder} {...item} />
       ))}
     </Grid>
-    // </div>
-    // </div>
   );
 };
 

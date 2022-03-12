@@ -13,8 +13,8 @@ const Search = (props) => {
       id="outlined-basic"
       label="Search"
       variant="outlined"
-      fullWidth
       //   variant="standard"
+      fullWidth
       sx={{
         mb: "1.5rem",
       }}

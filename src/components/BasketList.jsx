@@ -1,6 +1,6 @@
-import BasketItem from "./BasketItem";
-
 // компонент более не используется!!!
+
+import BasketItem from "./BasketItem";
 
 const BasketList = (props) => {
   const { order, removeFromOrder } = props;

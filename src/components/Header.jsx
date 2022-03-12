@@ -1,12 +1,4 @@
-import {
-  AppBar,
-  Badge,
-  // Button,
-  IconButton,
-  Toolbar,
-  Typography,
-} from "@mui/material";
-// import MenuIcon from "@mui/icons-material/Menu";
+import { AppBar, Badge, IconButton, Toolbar, Typography } from "@mui/material";
 import React from "react";
 import { ShoppingBasket } from "@mui/icons-material";
 
@@ -37,7 +29,6 @@ const Header = ({ handleCart, orderLength }) => {
             <ShoppingBasket />
           </Badge>
         </IconButton>
-        {/* <Button color="inherit">Login</Button> */}
       </Toolbar>
     </AppBar>
   );

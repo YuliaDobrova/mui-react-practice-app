@@ -14,14 +14,7 @@ const GoodsItem = (props) => {
   const { name, price, setOrder, poster } = props;
 
   return (
-    // <div className="col-12 col-md-6 px-md-2">
-    <Grid
-      item
-      xs={12}
-      md={4}
-      // sx={{ border: "1px solid blue" }}
-    >
-      {/* <div className="card"> */}
+    <Grid item xs={12} md={4}>
       <Card sx={{ height: "100%" }}>
         <CardActionArea>
           <CardMedia
@@ -32,18 +25,16 @@ const GoodsItem = (props) => {
             height="140"
           />
           <CardContent>
-            {/* <h5 className="card-title">{name}</h5> */}
             <Typography variant="h6" component="h3">
               {name}
             </Typography>
-            {/* <p className="card-text">Цена: {price} руб.</p> */}
             <Typography variant="h6">Price: {price} UAH</Typography>
           </CardContent>
         </CardActionArea>
         <CardActions>
           <Button
-            // variant="contained"
-            variant="outlined"
+            variant="contained"
+            // variant="outlined"
             // variant="text"
             onClick={() =>
               setOrder({
@@ -57,9 +48,7 @@ const GoodsItem = (props) => {
           </Button>
         </CardActions>
       </Card>
-      {/* </div> */}
     </Grid>
-    // </div>
   );
 };
 
