@@ -1,13 +1,20 @@
-import { AppBar, Button, IconButton, Toolbar, Typography } from "@mui/material";
-import MenuIcon from "@mui/icons-material/Menu";
+import {
+  AppBar,
+  Badge,
+  // Button,
+  IconButton,
+  Toolbar,
+  Typography,
+} from "@mui/material";
+// import MenuIcon from "@mui/icons-material/Menu";
 import React from "react";
 import { ShoppingBasket } from "@mui/icons-material";
 
-const Header = ({ handleCart }) => {
+const Header = ({ handleCart, orderLength }) => {
   return (
     <AppBar position="static">
       <Toolbar>
-        <IconButton
+        {/* <IconButton
           size="large"
           edge="start"
           color="inherit"
@@ -15,7 +22,7 @@ const Header = ({ handleCart }) => {
           sx={{ mr: 1 }}
         >
           <MenuIcon />
-        </IconButton>
+        </IconButton> */}
         <Typography
           variant="h6"
           component="div"
@@ -26,9 +33,11 @@ const Header = ({ handleCart }) => {
           MUI Shop App
         </Typography>
         <IconButton color="inherit" onClick={handleCart}>
-          <ShoppingBasket />
+          <Badge color="secondary" badgeContent={orderLength}>
+            <ShoppingBasket />
+          </Badge>
         </IconButton>
-        <Button color="inherit">Login</Button>
+        {/* <Button color="inherit">Login</Button> */}
       </Toolbar>
     </AppBar>
   );

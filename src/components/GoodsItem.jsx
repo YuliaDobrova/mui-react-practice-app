@@ -1,6 +1,7 @@
 import {
   Button,
   Card,
+  CardActionArea,
   CardActions,
   CardContent,
   CardMedia,
@@ -22,21 +23,23 @@ const GoodsItem = (props) => {
     >
       {/* <div className="card"> */}
       <Card sx={{ height: "100%" }}>
-        <CardMedia
-          component="img"
-          image={poster}
-          title={name}
-          alt={name}
-          height="140"
-        />
-        <CardContent>
-          {/* <h5 className="card-title">{name}</h5> */}
-          <Typography variant="h6" component="h3">
-            {name}
-          </Typography>
-          {/* <p className="card-text">Цена: {price} руб.</p> */}
-          <Typography variant="h6">Price: {price} UAH</Typography>
-        </CardContent>
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            image={poster}
+            title={name}
+            alt={name}
+            height="140"
+          />
+          <CardContent>
+            {/* <h5 className="card-title">{name}</h5> */}
+            <Typography variant="h6" component="h3">
+              {name}
+            </Typography>
+            {/* <p className="card-text">Цена: {price} руб.</p> */}
+            <Typography variant="h6">Price: {price} UAH</Typography>
+          </CardContent>
+        </CardActionArea>
         <CardActions>
           <Button
             // variant="contained"

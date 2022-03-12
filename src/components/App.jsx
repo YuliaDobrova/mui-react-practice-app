@@ -1,19 +1,20 @@
 import { useState } from "react";
-
-import { Basket } from "./Basket";
-// import BasketList from "./BasketList";   более не используется
-import GoodsList from "./GoodsList";
-import Search from "./Search";
+import { Container } from "@mui/material";
 
 import { goods } from "../data/goods";
+import GoodsList from "./GoodsList";
+import Search from "./Search";
 import Header from "./Header";
-import { Container } from "@mui/material";
+import { Basket } from "./Basket";
+// import BasketList from "./BasketList";   более не используется
+// import Snack from "./Snack";
 
 const App = () => {
   const [order, setOrder] = useState([]);
   const [search, setSearch] = useState("");
   const [products, setProducts] = useState(goods);
   const [isCartOpen, setIsCartOpen] = useState(false);
+  // const [isSnackOpen, setIsSnackOpen] = useState(false);
 
   const handleChange = (e) => {
     if (!e.target.value) {
@@ -61,11 +62,23 @@ const App = () => {
         },
       ]);
     }
+    // handleClick();
   };
 
   const removeFromOrder = (goodsItem) => {
     setOrder(order.filter((item) => item.id !== goodsItem));
   };
+
+  // function handleClick() {
+  //   setIsSnackOpen(true);
+  // }
+
+  // function handleClose(event, reason) {
+  //   if (reason === "clickaway") {
+  //     return;
+  //   }
+  //   setIsSnackOpen(false);
+  // }
 
   return (
     <>
@@ -73,6 +86,7 @@ const App = () => {
         handleCart={() => {
           setIsCartOpen(true);
         }}
+        orderLength={order.length}
       />
       <Container
         sx={{
@@ -91,6 +105,7 @@ const App = () => {
           setIsCartOpen(false);
         }}
       />
+      {/* <Snack isSnackOpen={isSnackOpen} handleClose={handleClose} /> */}
     </>
   );
 };
