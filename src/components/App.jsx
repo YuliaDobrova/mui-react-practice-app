@@ -6,6 +6,7 @@ import GoodsList from "./GoodsList";
 import Search from "./Search";
 import Header from "./Header";
 import { Basket } from "./Basket";
+import TabsComponent from "./TabsComponent";
 // import BasketList from "./BasketList";   более не используется
 // import Snack from "./Snack";
 
@@ -96,6 +97,7 @@ const App = () => {
         <Search value={search} onChange={handleChange} />
         <GoodsList goods={products} setOrder={addToOrder} />
         {/* <BasketList order={order} removeFromOrder={removeFromOrder} /> */}
+        <TabsComponent />
       </Container>
       <Basket
         order={order}
